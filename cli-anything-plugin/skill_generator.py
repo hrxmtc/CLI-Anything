@@ -465,7 +465,7 @@ def generate_skill_file(harness_path: str, output_path: Optional[str] = None,
 
     Args:
         harness_path: Path to the agent-harness directory
-        output_path: Optional output path for SKILL.md (default: skills/SKILL.md)
+        output_path: Optional output path for SKILL.md (default: cli_anything/<software>/skills/SKILL.md)
         template_path: Optional path to custom Jinja2 template
 
     Returns:
@@ -481,7 +481,7 @@ def generate_skill_file(harness_path: str, output_path: Optional[str] = None,
     if output_path is None:
         # Default to skills/ directory under harness_path
         harness_path_obj = Path(harness_path)
-        output_path = harness_path_obj / "skills" / "SKILL.md"
+        output_path = harness_path_obj / "cli_anything" / metadata.software_name / "skills" / "SKILL.md"
     else:
         output_path = Path(output_path)
 
@@ -507,7 +507,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "-o", "--output",
-        help="Output path for SKILL.md (default: skills/SKILL.md)",
+        help="Output path for SKILL.md (default: cli_anything/<software>/skills/SKILL.md)",
         default=None
     )
     parser.add_argument(

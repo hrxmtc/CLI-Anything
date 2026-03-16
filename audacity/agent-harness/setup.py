@@ -49,6 +49,9 @@ setup(
             "cli-anything-audacity=cli_anything.audacity.audacity_cli:main",
         ],
     },
+    package_data={
+        "cli_anything.audacity": ["skills/*.md"],
+    },
     include_package_data=True,
     zip_safe=False,
 )

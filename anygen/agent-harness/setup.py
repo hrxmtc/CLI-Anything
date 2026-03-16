@@ -49,6 +49,9 @@ setup(
             "cli-anything-anygen=cli_anything.anygen.anygen_cli:main",
         ],
     },
+    package_data={
+        "cli_anything.anygen": ["skills/*.md"],
+    },
     include_package_data=True,
     zip_safe=False,
 )

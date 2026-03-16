@@ -370,7 +370,7 @@ All CLIs organized under cli_anything.* namespace — conflict-free, pip-install
 
 ### 🤖 SKILL.md Generation
 
-Each generated CLI includes a `SKILL.md` file at `<software>/agent-harness/skills/SKILL.md` — a self-contained skill definition that enables AI agents to discover and use the CLI through Claude Code's skill system or other agent frameworks.
+Each generated CLI includes a `SKILL.md` file inside the Python package at `cli_anything/<software>/skills/SKILL.md`. This self-contained skill definition enables AI agents to discover and use the CLI through Claude Code's skill system or other agent frameworks.
 
 **What SKILL.md provides:**
 - **YAML frontmatter** with name and description for agent skill discovery
@@ -378,7 +378,7 @@ Each generated CLI includes a `SKILL.md` file at `<software>/agent-harness/skill
 - **Usage examples** for common workflows
 - **Agent-specific guidance** for JSON output, error handling, and programmatic use
 
-SKILL.md files are auto-generated during Phase 6.5 of the pipeline using `skill_generator.py`, which extracts metadata directly from the CLI's Click decorators, setup.py, and README.
+SKILL.md files are auto-generated during Phase 6.5 of the pipeline using `skill_generator.py`, which extracts metadata directly from the CLI's Click decorators, setup.py, and README. Because the file lives inside the package, it is installed alongside the CLI via `pip install` and auto-detected by the REPL banner — agents can read the absolute path displayed at startup.
 
 ---
 

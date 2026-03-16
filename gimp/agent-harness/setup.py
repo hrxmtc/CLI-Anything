@@ -49,6 +49,9 @@ setup(
             "cli-anything-gimp=cli_anything.gimp.gimp_cli:main",
         ],
     },
+    package_data={
+        "cli_anything.gimp": ["skills/*.md"],
+    },
     include_package_data=True,
     zip_safe=False,
 )

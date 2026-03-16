@@ -48,6 +48,9 @@ setup(
             "cli-anything-drawio=cli_anything.drawio.drawio_cli:cli",
         ],
     },
+    package_data={
+        "cli_anything.drawio": ["skills/*.md"],
+    },
     include_package_data=True,
     zip_safe=False,
 )

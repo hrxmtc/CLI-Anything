@@ -49,6 +49,9 @@ setup(
             "cli-anything-shotcut=cli_anything.shotcut.shotcut_cli:cli",
         ],
     },
+    package_data={
+        "cli_anything.shotcut": ["skills/*.md"],
+    },
     include_package_data=True,
     zip_safe=False,
 )

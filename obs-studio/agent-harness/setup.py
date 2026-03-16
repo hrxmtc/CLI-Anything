@@ -48,6 +48,9 @@ setup(
             "cli-anything-obs-studio=cli_anything.obs_studio.obs_studio_cli:main",
         ],
     },
+    package_data={
+        "cli_anything.obs_studio": ["skills/*.md"],
+    },
     include_package_data=True,
     zip_safe=False,
 )

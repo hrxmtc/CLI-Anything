@@ -74,8 +74,8 @@ designed for humans, without needing a display or mouse.
      ```python
      from cli_anything.<software>.utils.repl_skin import ReplSkin
 
-     skin = ReplSkin("<software>", version="1.0.0", skill_path="skills/SKILL.md")
-     skin.print_banner()          # Branded startup box (includes skill path for agents)
+     skin = ReplSkin("<software>", version="1.0.0")
+     skin.print_banner()          # Branded startup box (auto-detects skills/SKILL.md)
      pt_session = skin.create_prompt_session()  # prompt_toolkit with history + styling
      line = skin.get_input(pt_session, project_name="my_project", modified=True)
      skin.help(commands_dict)     # Formatted help listing
@@ -88,8 +88,8 @@ designed for humans, without needing a display or mouse.
      skin.progress(3, 10, "...")  # Progress bar
      skin.print_goodbye()         # Styled exit message
      ```
-   - **Important**: Include `skill_path` parameter to display the SKILL.md location in the
-     banner. This allows AI agents to discover where to read the skill documentation.
+   - ReplSkin auto-detects `skills/SKILL.md` inside the package directory and displays
+     it in the banner. AI agents can read the skill file at the displayed absolute path.
    - Make REPL the default behavior: use `invoke_without_command=True` on the main
      Click group, and invoke the `repl` command when no subcommand is given:
      ```python
@@ -259,9 +259,9 @@ definition that can be loaded by Claude Code or other AI assistants.
    from skill_generator import generate_skill_file
 
    skill_path = generate_skill_file(
-       harness_path="/path/to/agent-harness",
-       output_path="skills/SKILL.md"
+       harness_path="/path/to/agent-harness"
    )
+   # Default output: cli_anything/<software>/skills/SKILL.md
    ```
 
 2. **The generator automatically extracts:**
@@ -277,19 +277,21 @@ definition that can be loaded by Claude Code or other AI assistants.
 
 **Output Location:**
 
-By default, SKILL.md files are generated in the `skills/` directory:
+SKILL.md is generated inside the Python package so it is installed with `pip install`:
 ```
 <software>/
 └── agent-harness/
-    └── skills/
-        └── SKILL.md
+    └── cli_anything/
+        └── <software>/
+            └── skills/
+                └── SKILL.md
 ```
 
 **Manual Generation:**
 
 ```bash
 cd cli-anything-plugin
-python skill_generator.py /path/to/software/agent-harness -o skills/SKILL.md
+python skill_generator.py /path/to/software/agent-harness
 ```
 
 **Integration with CLI Build:**
@@ -306,22 +308,28 @@ skill definition.
 - List all command groups with brief descriptions
 - Provide realistic examples that demonstrate common workflows
 
-**Display Skill Path in CLI Banner:**
+**Skill Path in CLI Banner:**
 
-After generating SKILL.md, update the CLI's REPL initialization to display the skill
-path in the startup banner. This helps AI agents discover where to read the skill
-documentation when using the CLI:
+ReplSkin auto-detects `skills/SKILL.md` inside the package and displays the absolute
+path in the startup banner. AI agents can read the file at the displayed path:
 
 ```python
 # In the REPL initialization (e.g., shotcut_cli.py)
 from cli_anything.<software>.utils.repl_skin import ReplSkin
 
-skin = ReplSkin("<software>", version="1.0.0", skill_path="skills/SKILL.md")
-skin.print_banner()  # Now displays: ◇ Skill: skills/SKILL.md
+skin = ReplSkin("<software>", version="1.0.0")
+skin.print_banner()  # Auto-detects and displays: ◇ Skill: /path/to/cli_anything/<software>/skills/SKILL.md
 ```
 
-This enables agents to know exactly where to find the skill definition when they
-encounter the CLI.
+**Package Data:**
+
+Ensure `setup.py` includes the skill file as package data so it is installed with pip:
+
+```python
+package_data={
+    "cli_anything.<software>": ["skills/*.md"],
+},
+```
 
 ## Critical Lessons Learned
 

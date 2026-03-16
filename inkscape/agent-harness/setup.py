@@ -48,6 +48,9 @@ setup(
             "cli-anything-inkscape=cli_anything.inkscape.inkscape_cli:main",
         ],
     },
+    package_data={
+        "cli_anything.inkscape": ["skills/*.md"],
+    },
     include_package_data=True,
     zip_safe=False,
 )

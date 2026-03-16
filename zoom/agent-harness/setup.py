@@ -47,6 +47,9 @@ setup(
             "cli-anything-zoom=cli_anything.zoom.zoom_cli:main",
         ],
     },
+    package_data={
+        "cli_anything.zoom": ["skills/*.md"],
+    },
     include_package_data=True,
     zip_safe=False,
 )

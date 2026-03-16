@@ -216,7 +216,7 @@ Generate AI-discoverable skill definition:
 - Extract CLI metadata using `skill_generator.py`
 - Generate SKILL.md with YAML frontmatter (name, description)
 - Include command groups, examples, and agent-specific guidance
-- Output to `skills/SKILL.md`
+- Output to `cli_anything/<software>/skills/SKILL.md` (inside the Python package)
 
 **Output:** SKILL.md file for AI agent discovery
 
@@ -238,8 +238,6 @@ Package and install:
 └── agent-harness/
     ├── <SOFTWARE>.md          # Software-specific SOP
     ├── setup.py               # PyPI config (find_namespace_packages)
-    ├── skills/                # Generated skill definitions
-    │   └── SKILL.md               # AI-discoverable skill file
     └── cli_anything/          # Namespace package (NO __init__.py)
         └── <software>/        # Sub-package (HAS __init__.py)
             ├── README.md          # Installation and usage
@@ -252,6 +250,8 @@ Package and install:
             │   ├── session.py     # Undo/redo
             │   ├── export.py      # Rendering/export
             │   └── ...            # Domain-specific modules
+            ├── skills/            # AI-discoverable skill definition
+            │   └── SKILL.md       # Installed with the package via package_data
             ├── utils/             # Utilities
             │   ├── __init__.py
             │   ├── repl_skin.py   # Unified REPL skin (copy from plugin)

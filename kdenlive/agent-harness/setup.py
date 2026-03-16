@@ -48,6 +48,9 @@ setup(
             "cli-anything-kdenlive=cli_anything.kdenlive.kdenlive_cli:main",
         ],
     },
+    package_data={
+        "cli_anything.kdenlive": ["skills/*.md"],
+    },
     include_package_data=True,
     zip_safe=False,
 )

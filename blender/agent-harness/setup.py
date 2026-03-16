@@ -48,6 +48,9 @@ setup(
             "cli-anything-blender=cli_anything.blender.blender_cli:main",
         ],
     },
+    package_data={
+        "cli_anything.blender": ["skills/*.md"],
+    },
     include_package_data=True,
     zip_safe=False,
 )

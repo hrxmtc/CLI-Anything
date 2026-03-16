@@ -48,6 +48,9 @@ setup(
             "cli-anything-libreoffice=cli_anything.libreoffice.libreoffice_cli:main",
         ],
     },
+    package_data={
+        "cli_anything.libreoffice": ["skills/*.md"],
+    },
     include_package_data=True,
     zip_safe=False,
 )
