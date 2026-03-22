@@ -312,6 +312,20 @@
       "category": "design",
       "contributor": "zhangxilong-43",
       "contributor_url": "https://github.com/zhangxilong-43"
+    },
+    {
+      "name": "freecad",
+      "display_name": "FreeCAD",
+      "version": "1.0.0",
+      "description": "Parametric 3D CAD modeling via FreeCAD CLI (258 commands: Part, Sketcher, PartDesign, Assembly, Mesh, TechDraw, Draft, FEM, CAM, and more)",
+      "requires": "FreeCAD >= 0.21 (freecad.org)",
+      "homepage": "https://www.freecad.org",
+      "install_cmd": "pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=freecad/agent-harness",
+      "entry_point": "cli-anything-freecad",
+      "skill_md": "freecad/agent-harness/cli_anything/freecad/skills/SKILL.md",
+      "category": "3d",
+      "contributor": "AlexGabbia",
+      "contributor_url": "https://github.com/AlexGabbia"
     }
   ]
 }
