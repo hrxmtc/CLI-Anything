@@ -456,6 +456,7 @@ The catalog auto-updates whenever `registry.json` changes — new community CLIs
 | **📞 Communication & Collaboration** | Automate meeting scheduling, participant management, recording retrieval, and reporting through structured CLI | Zoom, Jitsi Meet, BigBlueButton, Mattermost |
 | **📐 Diagramming & Visualization** | Create and manipulate diagrams, flowcharts, architecture diagrams, and visual documentation programmatically | Draw.io (diagrams.net), Mermaid, PlantUML, Excalidraw, yEd |
 | **🌐 Network & Infrastructure** | Manage network services, DNS, ad-blocking, and infrastructure through structured CLI commands | AdGuardHome |
+| **🔬 Graphics & GPU Debugging** | Analyze GPU frame captures, inspect pipeline state, export shaders, and diff rendering state | RenderDoc |
 | **✨ AI Content Generation** | Generate professional deliverables (slides, docs, diagrams, websites, research reports) through AI-powered cloud APIs | [AnyGen](https://www.anygen.io), Gamma, Beautiful.ai, Tome |
 
 ---
@@ -771,8 +772,9 @@ comfyui        70 passed  ✅   (60 unit + 10 e2e)
 adguardhome    36 passed  ✅   (24 unit + 12 e2e)
 ollama         98 passed  ✅   (87 unit + 11 e2e)
 sketch         19 passed  ✅   (19 jest, Node.js)
+renderdoc      59 passed  ✅   (45 unit + 14 e2e)
 ──────────────────────────────────────────────────────────────────────────────
-TOTAL        1,858 passed  ✅   100% pass rate
+TOTAL        1,917 passed  ✅   100% pass rate
 ```
 
 ---
@@ -840,7 +842,8 @@ cli-anything/
 ├── 🧠 notebooklm/agent-harness/         # NotebookLM CLI (experimental, 21 tests)
 ├── 🛡️ adguardhome/agent-harness/       # AdGuard Home CLI (36 tests)
 ├── 🦙 ollama/agent-harness/             # Ollama CLI (98 tests)
-└── 🎨 sketch/agent-harness/             # Sketch CLI (19 tests, Node.js)
+├── 🎨 sketch/agent-harness/             # Sketch CLI (19 tests, Node.js)
+└── 🔬 renderdoc/agent-harness/          # RenderDoc CLI (59 tests)
 ```
 
 Each `agent-harness/` contains an installable Python package under `cli_anything.<software>/` with Click CLI, core modules, utils (including `repl_skin.py` and backend wrapper), and comprehensive tests.
