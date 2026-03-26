@@ -55,6 +55,7 @@
 !/browser/
 !/musescore/
 !/krita/
+!/freecad/
 !/iterm2/
 
 # Step 5: Inside each software dir, ignore everything (including dotfiles)
@@ -98,6 +99,8 @@
 /musescore/.*
 /krita/*
 /krita/.*
+/freecad/*
+/freecad/.*
 /iterm2/*
 /iterm2/.*
 
@@ -123,6 +126,7 @@
 !/browser/agent-harness/
 !/musescore/agent-harness/
 !/krita/agent-harness/
+!/freecad/agent-harness/
 !/iterm2/agent-harness/
 
 # Step 7: Ignore build artifacts within allowed dirs
