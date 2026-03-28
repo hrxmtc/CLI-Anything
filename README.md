@@ -758,12 +758,19 @@ Each application received complete, production-ready CLI interfaces — not demo
 <td align="center">✅ 19</td>
 </tr>
 <tr>
+<td align="center"><strong>☁️ CloudCompare</strong></td>
+<td>3D Point Cloud & Mesh</td>
+<td><code>cli-anything-cloudcompare</code></td>
+<td>CloudCompare CLI (headless)</td>
+<td align="center">✅ 88</td>
+</tr>
+<tr>
 <td align="center" colspan="4"><strong>Total</strong></td>
-<td align="center"><strong>✅ 1,858</strong></td>
+<td align="center"><strong>✅ 1,946</strong></td>
 </tr>
 </table>
 
-> **100% pass rate** across all 1,858 tests — 1,355 unit tests + 484 end-to-end tests + 19 Node.js tests.
+> **100% pass rate** across all 1,946 tests — 1,404 unit tests + 523 end-to-end tests + 19 Node.js tests.
 
 ---
 
@@ -799,8 +806,9 @@ adguardhome    36 passed  ✅   (24 unit + 12 e2e)
 ollama         98 passed  ✅   (87 unit + 11 e2e)
 sketch         19 passed  ✅   (19 jest, Node.js)
 renderdoc      59 passed  ✅   (45 unit + 14 e2e)
+cloudcompare   88 passed  ✅   (49 unit + 39 e2e)
 ──────────────────────────────────────────────────────────────────────────────
-TOTAL        1,917 passed  ✅   100% pass rate
+TOTAL        2,005 passed  ✅   100% pass rate
 ```
 
 ---
@@ -870,7 +878,8 @@ cli-anything/
 ├── 🛡️ adguardhome/agent-harness/       # AdGuard Home CLI (36 tests)
 ├── 🦙 ollama/agent-harness/             # Ollama CLI (98 tests)
 ├── 🎨 sketch/agent-harness/             # Sketch CLI (19 tests, Node.js)
-└── 🔬 renderdoc/agent-harness/          # RenderDoc CLI (59 tests)
+├── 🔬 renderdoc/agent-harness/          # RenderDoc CLI (59 tests)
+└── ☁️ cloudcompare/agent-harness/       # CloudCompare CLI (88 tests)
 ```
 
 Each `agent-harness/` contains an installable Python package under `cli_anything.<software>/` with Click CLI, core modules, utils (including `repl_skin.py` and backend wrapper), and comprehensive tests.

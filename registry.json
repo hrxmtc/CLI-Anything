@@ -396,6 +396,20 @@
       "category": "web",
       "contributor": "allthingssecurity",
       "contributor_url": "https://github.com/allthingssecurity"
+    },
+    {
+      "name": "cloudcompare",
+      "display_name": "CloudCompare",
+      "version": "0.1.0",
+      "description": "3D point cloud and mesh processing: load/save, color ops, normal estimation, Delaunay meshing, noise filtering, ICP registration, connected component segmentation",
+      "requires": "cloudcompare (CloudCompare application installed, e.g. via Flatpak or package manager)",
+      "homepage": "https://cloudcompare.org",
+      "install_cmd": "pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=cloudcompare/agent-harness",
+      "entry_point": "cli-anything-cloudcompare",
+      "skill_md": "cloudcompare/agent-harness/cli_anything/cloudcompare/skills/SKILL.md",
+      "category": "graphics",
+      "contributor": "Taeyoung96",
+      "contributor_url": "https://github.com/Taeyoung96"
     }
   ]
 }
