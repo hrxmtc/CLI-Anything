@@ -67,6 +67,7 @@
 !/zoom/
 !/sketch/
 !/drawio/
+!/godot/
 !/mermaid/
 !/comfyui/
 !/adguardhome/
@@ -111,6 +112,8 @@
 /sketch/.*
 /drawio/*
 /drawio/.*
+/godot/*
+/godot/.*
 /mermaid/*
 /mermaid/.*
 /comfyui/*
@@ -155,6 +158,7 @@
 !/zoom/agent-harness/
 !/sketch/agent-harness/
 !/drawio/agent-harness/
+!/godot/agent-harness/
 !/mermaid/agent-harness/
 !/comfyui/agent-harness/
 !/adguardhome/agent-harness/
