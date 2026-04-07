@@ -7,7 +7,7 @@ description: "Command-line interface for CloudAnalyzer — Agent-friendly harnes
 
 Agent-friendly command-line harness for [CloudAnalyzer](https://github.com/rsasaki0109/CloudAnalyzer) — a QA platform for mapping, localization, and perception point cloud outputs.
 
-**32 commands** across 8 groups.
+**27 commands** across 8 groups.
 
 ## Installation
 

@@ -44,7 +44,7 @@ See [SKILL.md](cli_anything/cloudanalyzer/skills/SKILL.md) for the full command 
 | Group | Commands | Description |
 |---|---:|---|
 | evaluate | 6 | Point cloud evaluation (Chamfer, F1, AUC, ground segmentation) |
-| trajectory | 4 | Trajectory QA (ATE, RPE, drift, lateral, longitudinal) |
+| trajectory | 3 | Trajectory QA (ATE, RPE, drift, lateral, longitudinal) |
 | check | 2 | Config-driven quality gates |
 | baseline | 3 | Baseline evolution (promote/keep/reject) |
 | process | 6 | Downsample, split, filter, merge, convert |
