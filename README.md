@@ -15,7 +15,7 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
   <a href="#-quick-start"><img src="https://img.shields.io/badge/Quick_Start-5_min-blue?style=for-the-badge" alt="Quick Start"></a>
   <a href="https://hkuds.github.io/CLI-Anything/"><img src="https://img.shields.io/badge/CLI_Hub-Browse_%26_Install-ff69b4?style=for-the-badge" alt="CLI Hub"></a>
   <a href="#-demonstrations"><img src="https://img.shields.io/badge/Demos-16_Apps-green?style=for-the-badge" alt="Demos"></a>
-  <a href="#-test-results"><img src="https://img.shields.io/badge/Tests-1%2C839_Passing-brightgreen?style=for-the-badge" alt="Tests"></a>
+  <a href="#-test-results"><img src="https://img.shields.io/badge/Tests-2%2C130_Passing-brightgreen?style=for-the-badge" alt="Tests"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License"></a>
 </p>
 
@@ -925,12 +925,19 @@ Each application received complete, production-ready CLI interfaces — not demo
 <td align="center">✅ 40</td>
 </tr>
 <tr>
+<td align="center"><strong>☁️ <a href="cloudanalyzer/agent-harness/">CloudAnalyzer</a></strong></td>
+<td>Point cloud / trajectory QA</td>
+<td><code>cli-anything-cloudanalyzer</code></td>
+<td>CloudAnalyzer (Python API)</td>
+<td align="center">✅ 14</td>
+</tr>
+<tr>
 <td align="center" colspan="4"><strong>Total</strong></td>
-<td align="center"><strong>✅ 2,045</strong></td>
+<td align="center"><strong>✅ 2,130</strong></td>
 </tr>
 </table>
 
-> **100% pass rate** across all 2,146 tests — 1,571 unit tests + 556 end-to-end tests + 19 Node.js tests.
+> **100% pass rate** across all 2,130 tests — 1,551 unit tests + 560 end-to-end tests + 19 Node.js tests.
 
 ---
 
@@ -968,8 +975,9 @@ sketch         19 passed  ✅   (19 jest, Node.js)
 renderdoc      59 passed  ✅   (45 unit + 14 e2e)
 cloudcompare   88 passed  ✅   (49 unit + 39 e2e)
 openscreen    101 passed  ✅   (78 unit + 23 e2e)
+cloudanalyzer  14 passed  ✅   (7 unit + 7 e2e)
 ──────────────────────────────────────────────────────────────────────────────
-TOTAL        2,106 passed  ✅   100% pass rate
+TOTAL        2,120 passed  ✅   100% pass rate
 ```
 
 ---
@@ -1045,7 +1053,8 @@ cli-anything/
 ├── 🎬 videocaptioner/agent-harness/     # VideoCaptioner CLI (26 tests)
 ├── 🎬 openscreen/agent-harness/         # Openscreen CLI — screen recording editor (101 tests)
 ├── ☁️ cloudcompare/agent-harness/       # CloudCompare CLI (88 tests)
-└── 🔍 exa/agent-harness/               # Exa CLI (40 tests)
+├── 🔍 exa/agent-harness/               # Exa CLI (40 tests)
+└── ⛅ cloudanalyzer/agent-harness/      # CloudAnalyzer CLI (14 tests)
 ```
 
 Each `agent-harness/` contains an installable Python package under `cli_anything.<software>/` with Click CLI, core modules, utils (including `repl_skin.py` and backend wrapper), and comprehensive tests.
