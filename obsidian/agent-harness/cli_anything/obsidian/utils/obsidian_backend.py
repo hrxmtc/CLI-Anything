@@ -145,39 +145,6 @@ def api_delete(base_url: str, endpoint: str, api_key: str,
         ) from e
 
 
-def api_patch(base_url: str, endpoint: str, api_key: str,
-              content: str = "", position: str = "end",
-              timeout: int = 30) -> Any:
-    """Perform a PATCH request for appending/prepending content."""
-    url = f"{base_url.rstrip('/')}{endpoint}"
-    try:
-        headers = _headers(api_key, content_type="text/markdown")
-        headers["Content-Insertion-Position"] = position
-        resp = requests.patch(url, headers=headers,
-                             data=content.encode("utf-8"),
-                             timeout=timeout, verify=False)
-        resp.raise_for_status()
-        if resp.status_code == 204 or not resp.content:
-            return {"status": "ok"}
-        ct = resp.headers.get("content-type", "")
-        if "application/json" in ct:
-            return resp.json()
-        return {"status": "ok"}
-    except requests.exceptions.ConnectionError as e:
-        raise RuntimeError(
-            f"Cannot connect to Obsidian REST API at {base_url}. "
-            "Is Obsidian running with the Local REST API plugin enabled?"
-        ) from e
-    except requests.exceptions.HTTPError as e:
-        raise RuntimeError(
-            f"Obsidian API error {resp.status_code} on PATCH {endpoint}: {resp.text}"
-        ) from e
-    except requests.exceptions.Timeout as e:
-        raise RuntimeError(
-            f"Request to Obsidian timed out: PATCH {endpoint}"
-        ) from e
-
-
 def is_available(api_key: str, base_url: str = DEFAULT_BASE_URL) -> bool:
     """Check if Obsidian REST API is reachable."""
     try:

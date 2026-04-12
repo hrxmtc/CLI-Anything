@@ -89,6 +89,13 @@ def handle_error(func):
                 click.echo(f"Error: {e}", err=True)
             if not _repl_mode:
                 sys.exit(1)
+        except Exception as e:
+            if _json_output:
+                click.echo(json.dumps({"error": str(e), "type": type(e).__name__}))
+            else:
+                click.echo(f"Error: {e}", err=True)
+            if not _repl_mode:
+                sys.exit(1)
     wrapper.__name__ = func.__name__
     wrapper.__doc__ = func.__doc__
     return wrapper

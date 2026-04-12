@@ -122,19 +122,6 @@ class TestBackend:
         result = api_put("https://localhost:27124", "/vault/test.md", "test-key", content="# Hello")
         assert result == {"status": "ok"}
 
-    @patch("cli_anything.obsidian.utils.obsidian_backend.requests.patch")
-    def test_api_patch(self, mock_patch):
-        from cli_anything.obsidian.utils.obsidian_backend import api_patch
-        mock_resp = MagicMock()
-        mock_resp.status_code = 200
-        mock_resp.content = b'{"status": "ok"}'
-        mock_resp.headers = {"content-type": "application/json"}
-        mock_resp.json.return_value = {"status": "ok"}
-        mock_resp.raise_for_status.return_value = None
-        mock_patch.return_value = mock_resp
-        result = api_patch("https://localhost:27124", "/vault/test.md", "test-key",
-                          content="appended text", position="end")
-        assert result == {"status": "ok"}
 
 
 # ── Core module tests ────────────────────────────────────────────
@@ -218,8 +205,8 @@ class TestSearchModule:
         mock_api.return_value = [{"filename": "note.md", "score": 0.9}]
         result = search_query("https://localhost:27124", "test-key", "test query")
         mock_api.assert_called_once_with(
-            "https://localhost:27124", "/search/simple/", "test-key",
-            params={"query": "test query", "contextLength": 100}
+            "https://localhost:27124", "/search/", "test-key",
+            data={"query": "test query"}
         )
 
     @patch("cli_anything.obsidian.core.search.api_post")

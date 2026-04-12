@@ -4,18 +4,17 @@ from cli_anything.obsidian.utils.obsidian_backend import api_post
 
 
 def search_query(base_url: str, api_key: str, query: str) -> dict:
-    """Search vault using Obsidian's simple text search.
+    """Search vault using Obsidian's search engine.
 
     Args:
         base_url: API base URL.
         api_key: Bearer token.
-        query: Search query string.
+        query: Search query string (Obsidian search syntax).
 
     Returns:
-        List of search results with filename, score, and matches.
+        Search results from Obsidian.
     """
-    return api_post(base_url, "/search/simple/", api_key,
-                    params={"query": query, "contextLength": 100})
+    return api_post(base_url, "/search/", api_key, data={"query": query})
 
 
 def search_simple(base_url: str, api_key: str, query: str,
