@@ -318,6 +318,14 @@ success "Cleanup suggestions generated"
 section "⚖️  Feature Test 6: Model Comparison"
 
 info "Comparing metrics between first two models..."
+echo ""
+echo "Debug: Checking if models have metrics..."
+python -m cli_anything.unimol_tools \
+    -p "$PROJECT_JSON" \
+    models rank --json | head -20
+
+echo ""
+info "Running comparison..."
 python -m cli_anything.unimol_tools \
     -p "$PROJECT_JSON" \
     models compare run_001 run_002
@@ -331,8 +339,24 @@ success "Model comparison completed"
 section "🔮 Bonus: Prediction with Best Model"
 
 info "Making predictions on test set using best model..."
-# Get best model run_id (assuming it's the one with best metrics)
-BEST_RUN=$(python -m cli_anything.unimol_tools -p "$PROJECT_JSON" models best --json 2>/dev/null | grep -o '"run_id":"[^"]*"' | head -1 | cut -d'"' -f4 || echo "run_003")
+# Get best model run_id using Python to properly parse JSON
+BEST_RUN=$(python3 -c "
+import json
+import sys
+try:
+    import subprocess
+    result = subprocess.run(
+        ['python', '-m', 'cli_anything.unimol_tools', '-p', '$PROJECT_JSON', 'models', 'best', '--json'],
+        capture_output=True, text=True, check=True
+    )
+    data = json.loads(result.stdout)
+    print(data.get('run_id', 'run_001'))
+except Exception as e:
+    print('run_001', file=sys.stderr)
+    print('run_001')
+" 2>/dev/null || echo "run_001")
+
+echo "Using model: $BEST_RUN"
 
 python -m cli_anything.unimol_tools \
     -p "$PROJECT_JSON" \

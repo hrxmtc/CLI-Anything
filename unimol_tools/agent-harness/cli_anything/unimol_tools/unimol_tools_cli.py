@@ -637,6 +637,9 @@ def models_compare(ctx, run_id_1, run_id_2):
                     v2_str = str(v2) if v2 is not None else "N/A"
 
                 click.echo(f"  {metric:12} {v1_str:12} vs {v2_str:12}  ({winner})")
+        else:
+            click.secho("⚠️  No metrics found for these models", fg="yellow")
+            click.echo("   Models may not have completed training or metrics were not saved.")
 
         click.echo()
 
