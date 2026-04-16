@@ -965,7 +965,7 @@ Each application received complete, production-ready CLI interfaces — not demo
 <td align="center">✅ 40</td>
 </tr>
 <tr>
-<td align="center"><strong>📈 <a href="unrealinsights/README.md">Unreal Insights</a></strong></td>
+<td align="center"><strong>📈 <a href="unrealinsights/agent-harness/">Unreal Insights</a></strong></td>
 <td>Performance Profiling</td>
 <td><code>cli-anything-unrealinsights</code></td>
 <td>Unreal trace capture + engine-matched UnrealInsights export</td>
@@ -1100,8 +1100,6 @@ cli-anything/
 ├── 🎮 godot/agent-harness/              # Godot Engine CLI (24 tests)
 ├── 🎨 sketch/agent-harness/             # Sketch CLI (19 tests, Node.js)
 ├── 🔬 renderdoc/agent-harness/          # RenderDoc CLI (59 tests)
-├── 📈 unrealinsights/README.md          # Unreal Insights human guide (English)
-├── 📈 unrealinsights/README_CN.md       # Unreal Insights human guide (Chinese)
 ├── 📈 unrealinsights/agent-harness/     # Unreal Insights CLI (46 tests)
 ├── 🎬 videocaptioner/agent-harness/     # VideoCaptioner CLI (26 tests)
 ├── 🎬 openscreen/agent-harness/         # Openscreen CLI — screen recording editor (101 tests)

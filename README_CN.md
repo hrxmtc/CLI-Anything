@@ -581,7 +581,7 @@ CLI-Anything 适用于任何有代码库的软件 —— 不限领域，不限�
 <td align="center">✅ 50</td>
 </tr>
 <tr>
-<td align="center"><strong>📈 <a href="unrealinsights/README_CN.md">Unreal Insights</a></strong></td>
+<td align="center"><strong>📈 <a href="unrealinsights/agent-harness/">Unreal Insights</a></strong></td>
 <td>性能分析</td>
 <td><code>cli-anything-unrealinsights</code></td>
 <td>Unreal trace 采集 + 匹配版 UnrealInsights 导出</td>
@@ -699,8 +699,6 @@ cli-anything/
 ├── 📞 zoom/agent-harness/               # Zoom CLI（22 项测试）
 ├── 📐 drawio/agent-harness/             # Draw.io CLI（138 项测试）
 ├── ✨ anygen/agent-harness/             # AnyGen CLI（50 项测试）
-├── 📈 unrealinsights/README.md          # Unreal Insights 人类说明（英文）
-├── 📈 unrealinsights/README_CN.md       # Unreal Insights 人类说明（中文）
 ├── 📈 unrealinsights/agent-harness/     # Unreal Insights CLI（46 项测试）
 └── 🎨 sketch/agent-harness/             # Sketch CLI（19 项测试，Node.js）
 ```

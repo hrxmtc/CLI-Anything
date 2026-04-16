@@ -171,6 +171,51 @@ Behavior:
 - `capture snapshot` creates a best-effort copy of the current `.utrace` without requiring you to end the session first
 - `capture stop` performs a best-effort stop of the tracked process tree launched by the harness
 
+## Human + AI Workflow
+
+When a human is directing an AI agent, the best requests usually specify:
+
+1. engine root
+2. project path or target executable
+3. whether the focus is startup or runtime behavior
+4. the artifact or summary you want back
+
+Example prompts:
+
+```text
+Use D:\code\D5\d5render-ue5_3 to analyze startup performance for
+D:\code\D5\FusionEffectBuild.
+First ensure a matching UnrealInsights.exe exists, then capture a startup trace,
+export timer-stats, and summarize the top 20 hotspots.
+```
+
+```text
+Use D:\code\D5\d5render-ue5_3 and D:\code\D5\FusionEffectBuild
+to start a background performance capture.
+Do not block and do not exit the project immediately.
+Tell me the trace path and current status first.
+When I say "stop", stop the capture, make a snapshot, export timer-stats and
+timing-events, then summarize the results.
+```
+
+```text
+Start a background trace for this project, let me interact with the scene
+manually, and wait.
+When I say "stop now", export timer-stats and timing-events and focus on
+GameThread, RenderThread, and task-system waits.
+```
+
+Useful phrases in prompts:
+
+- `ensure matching UnrealInsights`
+- `background continuous capture`
+- `wait until I say stop`
+- `make a snapshot`
+- `export timer-stats`
+- `export timing-events`
+- `summarize top hotspots`
+- `look at GameThread / RenderThread / WaitForTasks`
+
 ## Export Filters
 
 `timing-events` and `timer-stats` support:

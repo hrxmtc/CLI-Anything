@@ -225,8 +225,6 @@
 !/safari/
 !/safari/agent-harness/
 !/unrealinsights/agent-harness/
-!/unrealinsights/README.md
-!/unrealinsights/README_CN.md
 
 # Step 7: Ignore build artifacts within allowed dirs
 **/__pycache__/
