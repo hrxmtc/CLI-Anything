@@ -1,0 +1,37 @@
+{
+  "site": "clianything.cc",
+  "provider": "posthog",
+  "generated_at": "2026-04-23T15:31:59.837617+00:00",
+  "migration_started_at": "2026-04-23T09:06:38Z",
+  "baseline": {
+    "provider": "umami",
+    "site": "clianything.cc",
+    "scope": "clianything.cc only",
+    "queried_at": "2026-04-23T09:06:38.505000+00:00",
+    "total": 21123,
+    "human": 7689,
+    "agent": 13434,
+    "cli_hub_total": 16361,
+    "cli_hub_human": 3237,
+    "cli_hub_agent": 13124
+  },
+  "posthog_increment": {
+    "status": "ok",
+    "app_host": "https://us.posthog.com",
+    "project_id": "393992",
+    "human": 3,
+    "agent": 1,
+    "total": 4,
+    "cli_hub_human": 0,
+    "cli_hub_agent": 2,
+    "cli_hub_total": 2
+  },
+  "totals": {
+    "total": 21127,
+    "human": 7692,
+    "agent": 13435,
+    "cli_hub_total": 16363,
+    "cli_hub_human": 3237,
+    "cli_hub_agent": 13126
+  }
+}
